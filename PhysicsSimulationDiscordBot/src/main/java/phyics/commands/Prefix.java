@@ -13,7 +13,7 @@ public class Prefix extends Command {
     @Override
     public void processAndOutputMessage(Message rawInput, MessageChannel inputLocation) {
         String input = rawInput.getContent();
-        InputHandler.prefix = input.substring(input.indexOf(' ', input.lastIndexOf("prefix") + 7));
+        InputHandler.prefix = input.substring(input.indexOf(' ', input.lastIndexOf("prefix") + 6) + 1);
         inputLocation.createMessage("Changed prefix to: ``" + InputHandler.prefix + "``").block();
     }
 
