@@ -41,7 +41,7 @@ public class Main {
 
             // PROCESSES COMMANDS
 
-            
+
         });
 
         // To keep the main thread alive, await until bot disconnects through logout()
