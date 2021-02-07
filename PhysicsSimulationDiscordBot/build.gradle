@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'IU_Fan_Club'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+    // https://discord4j.com/
+    compile group: 'com.discord4j', name: 'discord4j-core', version: '3.1.3'
+}
+
