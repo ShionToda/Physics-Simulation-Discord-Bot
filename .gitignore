@@ -1,8 +1,4 @@
-git rm --cached bin
-git rm --cached .idea
-git rm --cached .git
-git rm --cached .gradle
 bin/
-.idea/
 .git/
-.gradle/
+PhysicsSimulationDiscordBot/.idea/
+PhysicsSimulationDiscordBot/.gradle/
