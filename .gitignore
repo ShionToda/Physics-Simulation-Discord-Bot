@@ -46,6 +46,7 @@ desktop.ini
 .metadata
 *.iml
 *.ipr
+bin
 
 # Gradle Files #
 ################
