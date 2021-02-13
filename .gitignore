@@ -1,4 +1,5 @@
+.git
 bin/
-.git/
-PhysicsSimulationDiscordBot/.idea/
-PhysicsSimulationDiscordBot/.gradle/
+PhysicsSimulationDiscordBot/.gradle
+PhysicsSimulationDiscordBot/.idea
+PhysicsSimulationDiscordBot/src/test
