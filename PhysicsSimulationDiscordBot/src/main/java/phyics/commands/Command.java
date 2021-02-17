@@ -1,6 +1,7 @@
 package phyics.commands;
 
 import discord4j.core.GatewayDiscordClient;
+import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.channel.MessageChannel;
 import phyics.inputs.InputHandler;
@@ -13,7 +14,7 @@ public abstract class Command {
         this.name = name;
     }
 
-    public abstract void processAndOutputMessage(Message rawInput, MessageChannel inputLocation, GatewayDiscordClient gatewayDiscordClient);
+    public abstract void processAndOutputMessage(MessageCreateEvent event, GatewayDiscordClient gatewayDiscordClient);
 
     public String getName() {
         return name;

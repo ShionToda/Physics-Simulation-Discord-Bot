@@ -1,6 +1,7 @@
 package phyics.inputs;
 
 import discord4j.core.GatewayDiscordClient;
+import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.channel.MessageChannel;
 import phyics.commands.Command;
@@ -26,7 +27,10 @@ public class InputHandler {
         this.database = database;
     }
 
-    public void process(Message message, MessageChannel channel) {
+    public void process(MessageCreateEvent event) {
+
+        final Message message = event.getMessage();
+        final MessageChannel channel = message.getChannel().block();
 
         String received = message.getContent().trim();
 
@@ -45,7 +49,7 @@ public class InputHandler {
 
             if (cmd.startsWith(command.getName())) {
                 // TASK
-                command.processAndOutputMessage(message, channel, gateway);
+                command.processAndOutputMessage(event, gateway);
                 break;
             }
         }

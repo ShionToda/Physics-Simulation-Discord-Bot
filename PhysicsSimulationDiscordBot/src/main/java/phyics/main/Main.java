@@ -24,13 +24,10 @@ public class Main {
 
         gateway.on(MessageCreateEvent.class).subscribe(event -> {
 
-            final Message message = event.getMessage();
-            final MessageChannel channel = message.getChannel().block();
-
             // database
 
             // PROCESSES COMMANDS
-            inputHandler.process(message, channel);
+            inputHandler.process(event);
         });
 
         gateway.onDisconnect().block();
