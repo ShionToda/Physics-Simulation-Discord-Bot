@@ -16,3 +16,13 @@ dependencies {
     compile group: 'com.discord4j', name: 'discord4j-core', version: '3.1.3'
 }
 
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'phyics.main.Main.java'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
