@@ -1,4 +1,4 @@
-package phyics;
+package phyics.database;
 
 import java.sql.*;
 
