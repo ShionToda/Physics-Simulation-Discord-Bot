@@ -6,6 +6,8 @@ import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.channel.MessageChannel;
 import phyics.inputs.InputHandler;
 
+import java.io.InputStream;
+
 public abstract class Command {
 
     private final String name;
@@ -14,7 +16,9 @@ public abstract class Command {
         this.name = name;
     }
 
-    public abstract void processAndOutputMessage(MessageCreateEvent event, GatewayDiscordClient gatewayDiscordClient);
+    public abstract void update(MessageCreateEvent event, GatewayDiscordClient gatewayDiscordClient);
+
+    public abstract void processWhenCalled(MessageCreateEvent event, GatewayDiscordClient gatewayDiscordClient);
 
     public String getName() {
         return name;
@@ -29,5 +33,18 @@ public abstract class Command {
     public String[] getArguments(String input) {
         String entireArgument = input.substring( (InputHandler.prefix + name).length() );
         return entireArgument.trim().split("\\s+");
+    }
+
+    public boolean isCalled(MessageCreateEvent event) {
+        String message = event.getMessage().getContent();
+        return isCalled(message);
+    }
+
+    public boolean isCalled(String content) {
+        String cmd = content.substring(InputHandler.prefix.length()).trim();
+        if (cmd.startsWith(name)) {
+            return true;
+        }
+        return  false;
     }
 }

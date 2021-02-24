@@ -17,7 +17,12 @@ public class LessThanThree extends Command{
     }
 
     @Override
-    public void processAndOutputMessage(MessageCreateEvent event, GatewayDiscordClient gatewayDiscordClient) {
+    public void update(MessageCreateEvent event, GatewayDiscordClient gatewayDiscordClient) {
+
+    }
+
+    @Override
+    public void processWhenCalled(MessageCreateEvent event, GatewayDiscordClient gatewayDiscordClient) {
         final Message message = event.getMessage();
         final MessageChannel channel = message.getChannel().block();
 
