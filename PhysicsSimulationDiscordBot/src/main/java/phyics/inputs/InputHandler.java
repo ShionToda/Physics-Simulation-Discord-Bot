@@ -10,6 +10,7 @@ import phyics.database.Database;
 import testing.FollowUpCommandExample;
 import testing.LessThanThree;
 import testing.TestingCommand;
+import testing.followup;
 
 public class InputHandler {
 
@@ -24,7 +25,7 @@ public class InputHandler {
     public InputHandler(GatewayDiscordClient gateway, Database database) {
         this.gateway = gateway;
         commands = new Command[] {
-                new Prefix(), new TestingCommand(), new LessThanThree(), new FollowUpCommandExample()
+                new Prefix(), new TestingCommand(), new LessThanThree(), new FollowUpCommandExample(), new followup()
         };
 //
 //        help = new Help(commands);
