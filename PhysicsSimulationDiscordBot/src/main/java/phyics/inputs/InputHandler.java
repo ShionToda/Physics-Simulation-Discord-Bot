@@ -6,6 +6,7 @@ import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.channel.MessageChannel;
 import phyics.commands.Command;
 import phyics.commands.Prefix;
+import phyics.commands.Formula;
 import phyics.database.Database;
 import testing.FollowUpCommandExample;
 import testing.LessThanThree;
@@ -25,7 +26,7 @@ public class InputHandler {
     public InputHandler(GatewayDiscordClient gateway, Database database) {
         this.gateway = gateway;
         commands = new Command[] {
-                new Prefix(), new TestingCommand(), new LessThanThree(), new FollowUpCommandExample(), new followup()
+                new Prefix(), new TestingCommand(), new LessThanThree(), new FollowUpCommandExample(), new followup(), new Formula()
         };
 //
 //        help = new Help(commands);

@@ -28,7 +28,11 @@ public class Formula extends Command {
                 queuedUserID = null;
                 return;
             }
-            channel.createMessage("hi").block();
+            else if (content.equalsIgnoreCase("kinematics")){
+                channel.createMessage("Branch? kinematics + (1D, 2D)").block();
+            } else if (content.equalsIgnoreCase("kinematics1d")){
+                channel.createMessage("(insert all formulas here)").block();
+            }
         }
     }
 
@@ -41,7 +45,7 @@ public class Formula extends Command {
             return;
         }
         else {
-            channel.createMessage("Say anything and \"reset\" or \"quit\" to stop").block();
+            channel.createMessage("Say a topic and \"reset\" or \"quit\" to stop").block();
             isQueued = true;
             queuedUserID = message.getUserData().id();
         }
